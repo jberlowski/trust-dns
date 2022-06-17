@@ -102,8 +102,9 @@ impl Clone for ResolveErrorKind {
 
 /// The error type for errors that get returned in the crate
 #[derive(Debug, Clone, Error)]
+#[allow(missing_docs)]
 pub struct ResolveError {
-    pub(crate) kind: ResolveErrorKind,
+    pub kind: ResolveErrorKind,
     #[cfg(feature = "backtrace")]
     backtrack: Option<ExtBacktrace>,
 }

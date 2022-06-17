@@ -1308,14 +1308,14 @@ impl<'a> IntoName for &'a str {
 impl IntoName for String {
     /// Performs a utf8, IDNA or punycode, translation of the `String` into `Name`
     fn into_name(self) -> ProtoResult<Name> {
-        Name::from_utf8(self)
+        Name::from_str_relaxed(self)
     }
 }
 
 impl IntoName for &String {
     /// Performs a utf8, IDNA or punycode, translation of the `&String` into `Name`
     fn into_name(self) -> ProtoResult<Name> {
-        Name::from_utf8(self)
+        Name::from_str_relaxed(self)
     }
 }
 
